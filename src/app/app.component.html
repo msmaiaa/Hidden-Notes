@@ -4,16 +4,9 @@
       <mat-card-title><h2>Hidden Notes</h2></mat-card-title>
       <mat-card-subtitle>Self-destructing notes.</mat-card-subtitle>
     </mat-card-header>
-    
     <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-      <p>Enter your Private Note in the field below</p>
-      <mat-form-field>
-        <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="15" resizeToFitContent="true" maxlength="350"></textarea>
-      </mat-form-field>
+      <router-outlet>
+      </router-outlet>
     </mat-card-content>
-    <mat-card-actions fxLayoutAlign="center center">
-      <button mat-raised-button >Submit</button>
-    </mat-card-actions>
   </mat-card>
-
 </div>

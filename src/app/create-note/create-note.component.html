@@ -1,0 +1,11 @@
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()" fxLayoutAlign="center center" fxLayout="column">
+    <p>Enter your Private Note in the field below</p>
+    <mat-form-field appearance="outline">
+    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="15" resizeToFitContent="true" maxlength="350" 
+    formControlName="content" ></textarea>
+    </mat-form-field>
+    <mat-card-actions fxLayoutAlign="center center">
+    <button type="submit" mat-raised-button [disabled]="!noteForm.valid">Submit</button>
+    </mat-card-actions>
+</form>
+
