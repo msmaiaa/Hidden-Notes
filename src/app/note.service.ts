@@ -16,4 +16,8 @@ export class NoteService {
   addNote(note: Note):Observable<Note>{
     return this.http.post<Note>(`${this.url}/new`, note)
   }
+
+  getNote(pageId: string){
+    return this.http.get<Note>(`${this.url}/${pageId}`)
+  }
 }

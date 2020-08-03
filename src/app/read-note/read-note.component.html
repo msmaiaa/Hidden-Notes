@@ -1,1 +1,5 @@
-<textarea matInput disabled="true" [value]="pageId"></textarea>
+<div fxLayoutAlign="column" fxLayout="center center">
+    <textarea matInput disabled="true"  [(ngModel)]="noteContent" cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="15" resizeToFitContent="true" maxlength="350"></textarea>
+    <button mat-raised-button [cdkCopyToClipboard]="noteContent">Copy to clipboard</button>
+</div>
+
