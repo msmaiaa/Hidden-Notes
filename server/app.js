@@ -6,7 +6,9 @@ const app = express();
 const bodyparser = require("body-parser");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
+const cors = require("cors");
 app.use(bodyparser());
+app.use(cors());
 
 
 mongoose.connect(process.env.DB_LINK,{useNewUrlParser: true, useUnifiedTopology: true})
@@ -14,7 +16,7 @@ mongoose.connect(process.env.DB_LINK,{useNewUrlParser: true, useUnifiedTopology:
     console.log("conectado no banco de dados")
 })
 
-app.get('/note/:id', (req,res)=>{
+app.get('/note/:pageId', (req,res)=>{
     res.status(200).send({message: 'Teste'})
 })
 
