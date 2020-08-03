@@ -1,4 +1,6 @@
 require('dotenv').config({path: "C:\\Users\\msmai\\Desktop\\code\\angular\\projeto\\hidden-notes\\server" + '/.env'})
+const path = require('path');
+
 const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
 const key = crypto.randomBytes(32);
@@ -13,12 +15,18 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 app.use(bodyparser());
 app.use(cors());
+app.use(express.static(__dirname + '../src/index.html'));
+
 
 
 mongoose.connect(process.env.DB_LINK,{useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log("conectado no banco de dados")
 })
+
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname+'/angularapp/index.html'));
+});
 
 app.get('/note/:pageId', async(req,res)=>{
     try{
