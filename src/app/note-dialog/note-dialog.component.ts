@@ -8,8 +8,8 @@ import { Note } from '../models/note.model';
 })
 export class NoteDialogComponent implements OnInit {
 
-  noteData = this.data;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Note) {
+  noteData = this.data.note;
+  constructor(@Inject(MAT_DIALOG_DATA) public data) {
     console.log(data);
   }
 
