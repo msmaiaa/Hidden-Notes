@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../models/node.model';
+import { Note } from '../models/note.model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NoteService } from '../note.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -43,7 +43,7 @@ export class CreateNoteComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    
+
   }
 
 }

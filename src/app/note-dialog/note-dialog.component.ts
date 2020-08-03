@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Note } from '../models/node.model';
+import { Note } from '../models/note.model';
 @Component({
   selector: 'app-note-dialog',
   templateUrl: './note-dialog.component.html',
@@ -8,6 +8,7 @@ import { Note } from '../models/node.model';
 })
 export class NoteDialogComponent implements OnInit {
 
+  noteData = this.data;
   constructor(@Inject(MAT_DIALOG_DATA) public data: Note) {
     console.log(data);
   }

@@ -22,8 +22,11 @@ mongoose.connect(process.env.DB_LINK,{useNewUrlParser: true, useUnifiedTopology:
 
 app.get('/note/:pageId', async(req,res)=>{
     try{
+        if(!req.params.pageId){
+            return res.status(500).send({error: 'missing params'})
+        }
         NoteModel.findOneAndDelete({pageId:req.params.pageId},(err,note)=>{
-            if(err){
+            if(err || !note){
                 return res.status(500).send({message:'Could not find the note, maybe its already deleted.',error:err})
             }
             let newNote = note;

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NoteService } from './note.service'
-import { Note } from './models/node.model';
+import { Note } from './models/note.model';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteDialogComponent } from './note-dialog/note-dialog.component';
 
@@ -13,7 +13,7 @@ import { NoteDialogComponent } from './note-dialog/note-dialog.component';
 })
 export class AppComponent {
   constructor(){
-    
+
   }
 
 }

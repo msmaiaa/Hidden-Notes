@@ -1,5 +1,10 @@
-<div fxLayoutAlign="column" fxLayout="center center">
-    <textarea matInput disabled="true"  [(ngModel)]="noteContent" cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="15" resizeToFitContent="true" maxlength="350"></textarea>
-    <button mat-raised-button [cdkCopyToClipboard]="noteContent">Copy to clipboard</button>
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div *ngIf="!error" fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 25px;">
+        <p style="color: red;"><strong>This note has been destroyed.</strong></p>
+        <textarea matInput disabled="true"  [(ngModel)]="noteContent" cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="15" resizeToFitContent="true" maxlength="350"></textarea>
+        <button mat-raised-button [cdkCopyToClipboard]="noteContent">Copy to clipboard</button>
+    </div>
+    <p *ngIf="error">{{error}}</p>
+    <button mat-raised-button (click)="goHome()">Home Page</button>
 </div>
 
