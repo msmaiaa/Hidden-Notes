@@ -7,7 +7,7 @@ import { Note } from './models/note.model';
 })
 export class NoteService {
 
-  url:string = "https://35.239.192.173:3000/note"
+  url:string = "http://35.239.192.173:3000/note"
 
   constructor(private http:HttpClient) {
 
